@@ -1,0 +1,2592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Tiger Finance</title>
+
+<style>
+
+/* ==================================================
+   TIGER FINANCE
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eefbfc;
+    color: #222;
+}
+
+
+/* ==================================================
+   NAVIGATION
+   ================================================== */
+
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #08a9b5;
+    color: white;
+
+    padding: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.15);
+}
+
+.logo {
+    text-align: center;
+    margin: 5px 0 15px;
+    font-size: 28px;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nav-buttons button {
+    border: none;
+    border-radius: 20px;
+
+    padding: 11px 15px;
+
+    background: white;
+    color: #087d88;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   MAIN
+   ================================================== */
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 15px;
+}
+
+.card {
+    background: white;
+
+    margin: 20px 0;
+    padding: 25px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.07);
+}
+
+.card h2 {
+    color: #087d88;
+    margin-top: 0;
+}
+
+
+/* ==================================================
+   HOME
+   ================================================== */
+
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    color: #087d88;
+    font-size: 34px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.quick-grid button {
+    border: none;
+
+    background: #08a9b5;
+    color: white;
+
+    padding: 17px;
+
+    border-radius: 15px;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   FORMS
+   ================================================== */
+
+label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border:
+        2px solid #d7eeee;
+
+    border-radius: 11px;
+
+    background: white;
+
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.primary-btn {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: #08a9b5;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   RESULT
+   ================================================== */
+
+.result {
+    margin-top: 18px;
+
+    padding: 17px;
+
+    background: #effcfd;
+
+    border-left:
+        6px solid #08a9b5;
+
+    border-radius: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   MARKET
+   ================================================== */
+
+.market-card {
+    background: #f8ffff;
+
+    margin-top: 15px;
+
+    padding: 20px;
+
+    border-radius: 17px;
+
+    border-left:
+        6px solid #08a9b5;
+}
+
+.market-card h3 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.open {
+    color: green;
+    font-weight: bold;
+}
+
+.closed {
+    color: #d00000;
+    font-weight: bold;
+}
+
+.warning {
+    color: #a56700;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.small {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   NEWS
+   ================================================== */
+
+.news-item {
+    margin-top: 12px;
+
+    padding: 17px;
+
+    background: #f8ffff;
+
+    border-left:
+        5px solid #08a9b5;
+
+    border-radius: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   WATCHLIST
+   ================================================== */
+
+.watch-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    padding: 13px;
+
+    background: #f5ffff;
+
+    border-radius: 10px;
+}
+
+.remove-btn,
+.delete-btn {
+    border: none;
+
+    background: #dc3545;
+    color: white;
+
+    padding: 9px 12px;
+
+    border-radius: 8px;
+}
+
+
+/* ==================================================
+   JOURNAL
+   ================================================== */
+
+.journal-entry {
+    margin-top: 15px;
+
+    padding: 17px;
+
+    background: #f8ffff;
+
+    border-left:
+        5px solid #08a9b5;
+
+    border-radius: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #666;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .nav-buttons {
+        flex-direction: column;
+    }
+
+    .nav-buttons button {
+        width: 100%;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 19px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     NAVIGATION
+     ================================================== -->
+
+<nav class="top-nav">
+
+    <h1 class="logo">
+        🐯 Tiger Finance
+    </h1>
+
+    <div class="nav-buttons">
+
+        <button
+            onclick="scrollToSection('home')"
+        >
+            🏠 Home
+        </button>
+
+        <button
+            onclick="scrollToSection('forex')"
+        >
+            💱 Forex
+        </button>
+
+        <button
+            onclick="scrollToSection('markets')"
+        >
+            📊 Markets
+        </button>
+
+        <button
+            onclick="scrollToSection('news')"
+        >
+            📅 News
+        </button>
+
+        <button
+            onclick="scrollToSection('journal')"
+        >
+            📒 Journal
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- ==================================================
+     TIGER FINANCE LOGIN
+     ================================================== -->
+
+<section id="login-section" class="auth-section">
+
+    <h2>🐯 Login to Tiger Finance</h2>
+
+    <p>Welcome back. Login to continue.</p>
+
+    <input
+        type="email"
+        id="loginEmail"
+        placeholder="Email address"
+        autocomplete="email"
+    >
+
+    <input
+        type="password"
+        id="loginPassword"
+        placeholder="Password"
+        autocomplete="current-password"
+    >
+
+    <button type="button" id="loginButton">
+        Login
+    </button>
+
+    <p id="loginMessage"></p>
+
+</section>
+
+
+<!-- ==================================================
+     TIGER FINANCE SIGN UP
+     ================================================== -->
+
+<section id="signup-section" class="auth-section">
+
+    <h2>🐯 Create your Tiger Finance account</h2>
+
+    <p>Join Tiger Finance and keep your financial tools in one place.</p>
+
+    <input
+        type="text"
+        id="signupName"
+        placeholder="Full name"
+        autocomplete="name"
+    >
+
+    <input
+        type="email"
+        id="signupEmail"
+        placeholder="Email address"
+        autocomplete="email"
+    >
+
+    <input
+        type="password"
+        id="signupPassword"
+        placeholder="Password"
+        autocomplete="new-password"
+    >
+
+    <button type="button" id="signupButton">
+        Create Account
+    </button>
+
+    <p id="signupMessage"></p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- ==================================================
+     HOME
+     ================================================== -->
+
+<section
+    id="home"
+    class="card"
+>
+
+    <div class="hero">
+
+        <h1>
+            🐯 Welcome to Tiger Finance
+        </h1>
+
+        <p>
+            Your personal finance and
+            trading dashboard.
+        </p>
+
+        <p>
+            Calculate trading risk,
+            monitor market sessions,
+            follow crypto prices,
+            track markets and keep
+            a trading journal.
+        </p>
+
+    </div>
+
+
+    <div class="quick-grid">
+
+        <button
+            onclick="scrollToSection('forex')"
+        >
+            💱 Forex Calculator
+        </button>
+
+        <button
+            onclick="scrollToSection('markets')"
+        >
+            📊 Market Dashboard
+        </button>
+
+        <button
+            onclick="scrollToSection('news')"
+        >
+            📅 Economic News
+        </button>
+
+        <button
+            onclick="scrollToSection('journal')"
+        >
+            📒 Trading Journal
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FOREX
+     ================================================== -->
+
+<section
+    id="forex"
+    class="card"
+>
+
+    <h2>
+        💱 Forex Risk Calculator
+    </h2>
+
+
+    <label>
+        Account Currency
+    </label>
+
+    <select id="accountCurrency">
+
+        <option value="USD">
+            USD - US Dollar
+        </option>
+
+        <option value="NGN">
+            NGN - Nigerian Naira
+        </option>
+
+        <option value="EUR">
+            EUR - Euro
+        </option>
+
+        <option value="GBP">
+            GBP - British Pound
+        </option>
+
+    </select>
+
+
+    <label>
+        Currency Pair
+    </label>
+
+    <select id="currencyPair">
+
+        <option value="EURUSD">
+            EUR/USD
+        </option>
+
+        <option value="GBPUSD">
+            GBP/USD
+        </option>
+
+        <option value="USDJPY">
+            USD/JPY
+        </option>
+
+        <option value="USDCHF">
+            USD/CHF
+        </option>
+
+        <option value="AUDUSD">
+            AUD/USD
+        </option>
+
+        <option value="USDCAD">
+            USD/CAD
+        </option>
+
+        <option value="NZDUSD">
+            NZD/USD
+        </option>
+
+        <option value="EURGBP">
+            EUR/GBP
+        </option>
+
+        <option value="EURJPY">
+            EUR/JPY
+        </option>
+
+        <option value="GBPJPY">
+            GBP/JPY
+        </option>
+
+        <option value="EURCHF">
+            EUR/CHF
+        </option>
+
+        <option value="AUDJPY">
+            AUD/JPY
+        </option>
+
+        <option value="CADJPY">
+            CAD/JPY
+        </option>
+
+        <option value="CHFJPY">
+            CHF/JPY
+        </option>
+
+        <option value="NZDJPY">
+            NZD/JPY
+        </option>
+
+    </select>
+
+
+    <label>
+        Account Balance
+    </label>
+
+    <input
+        id="balance"
+        type="number"
+        step="any"
+        placeholder="Example: 100"
+    >
+
+
+    <label>
+        Risk %
+    </label>
+
+    <input
+        id="risk"
+        type="number"
+        step="any"
+        placeholder="Example: 2"
+    >
+
+
+    <label>
+        Stop Loss (pips)
+    </label>
+
+    <input
+        id="stopLoss"
+        type="number"
+        step="any"
+        placeholder="Example: 20"
+    >
+
+
+    <button
+        class="primary-btn"
+        onclick="calculateLotSize()"
+    >
+        Calculate Lot Size
+    </button>
+
+
+    <div
+        id="lotResult"
+        class="result"
+    >
+        Enter your trading information
+        and calculate.
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     MARKETS
+     ================================================== -->
+
+<section
+    id="markets"
+    class="card"
+>
+
+    <h2>
+        📊 Market Dashboard
+    </h2>
+
+
+    <!-- FOREX -->
+
+    <div class="market-card">
+
+        <h3>
+            💱 Forex
+        </h3>
+
+        <p id="forexStatus">
+            Checking forex sessions...
+        </p>
+
+        <p id="forexOverlap">
+            Checking overlap...
+        </p>
+
+        <p>
+            🇳🇬 Nigeria Time:
+            <strong id="nigeriaTime">
+                --
+            </strong>
+        </p>
+
+    </div>
+
+
+    <!-- CRYPTO -->
+
+    <div class="market-card">
+
+        <h3>
+            ₿ Crypto
+        </h3>
+
+        <p class="open">
+            🟢 OPEN — Crypto operates 24/7.
+        </p>
+
+        <p>
+            Bitcoin:
+            <strong
+                id="bitcoinPrice"
+                class="price"
+            >
+                Loading...
+            </strong>
+        </p>
+
+        <p>
+            Ethereum:
+            <strong
+                id="ethereumPrice"
+                class="price"
+            >
+                Loading...
+            </strong>
+        </p>
+
+        <p
+            id="cryptoStatus"
+            class="small"
+        >
+            Loading live crypto prices...
+        </p>
+
+    </div>
+
+
+    <!-- US STOCKS -->
+
+    <div class="market-card">
+
+        <h3>
+            🇺🇸 US Stock Market
+        </h3>
+
+        <p id="usStockStatus">
+            Checking...
+        </p>
+
+        <p class="small">
+            Regular session:
+            9:30 AM – 4:00 PM
+            New York time.
+        </p>
+
+    </div>
+
+
+    <!-- NIGERIAN STOCKS -->
+
+    <div class="market-card">
+
+        <h3>
+            🇳🇬 Nigerian Stock Market
+        </h3>
+
+        <p id="ngStockStatus">
+            Checking...
+        </p>
+
+        <p class="small">
+            Session shown:
+            9:00 AM – 4:00 PM
+            Nigeria time.
+        </p>
+
+    </div>
+
+
+    <!-- WATCHLIST -->
+
+    <div class="market-card">
+
+        <h3>
+            ⭐ Forex Watchlist
+        </h3>
+
+
+        <select id="watchPair">
+
+            <option>
+                EUR/USD
+            </option>
+
+            <option>
+                GBP/USD
+            </option>
+
+            <option>
+                USD/JPY
+            </option>
+
+            <option>
+                USD/CHF
+            </option>
+
+            <option>
+                AUD/USD
+            </option>
+
+            <option>
+                USD/CAD
+            </option>
+
+            <option>
+                NZD/USD
+            </option>
+
+            <option>
+                EUR/JPY
+            </option>
+
+            <option>
+                GBP/JPY
+            </option>
+
+        </select>
+
+
+        <button
+            class="primary-btn"
+            onclick="addWatchPair()"
+        >
+            ⭐ Add Pair
+        </button>
+
+
+        <div id="watchlist"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     NEWS
+     ================================================== -->
+
+<section
+    id="news"
+    class="card"
+>
+
+    <h2>
+        📅 Economic News
+    </h2>
+
+    <p>
+        Tiger Finance economic-news area.
+    </p>
+
+
+    <button
+        class="primary-btn"
+        onclick="loadNews()"
+    >
+        🔄 Refresh News
+    </button>
+
+
+    <div id="newsContainer">
+
+        <div class="news-item">
+
+            <strong>
+                📢 Economic Calendar
+            </strong>
+
+            <p>
+                Major economic announcements
+                can cause rapid market movements.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     JOURNAL
+     ================================================== -->
+
+<section
+    id="journal"
+    class="card"
+>
+
+    <h2>
+        📒 Trading Journal
+    </h2>
+
+
+    <label>
+        Currency Pair
+    </label>
+
+    <input
+        id="journalPair"
+        placeholder="Example: EUR/USD"
+    >
+
+
+    <label>
+        Direction
+    </label>
+
+    <select id="journalDirection">
+
+        <option value="BUY">
+            BUY
+        </option>
+
+        <option value="SELL">
+            SELL
+        </option>
+
+    </select>
+
+
+    <label>
+        Entry Price
+    </label>
+
+    <input
+        id="journalEntry"
+        type="number"
+        step="any"
+        placeholder="Entry price"
+    >
+
+
+    <label>
+        Result
+    </label>
+
+    <select id="journalResult">
+
+        <option value="WIN">
+            WIN
+        </option>
+
+        <option value="LOSS">
+            LOSS
+        </option>
+
+        <option value="BREAKEVEN">
+            BREAKEVEN
+        </option>
+
+    </select>
+
+
+    <label>
+        Notes
+    </label>
+
+    <textarea
+        id="journalNotes"
+        placeholder="Write your trade notes..."
+    ></textarea>
+
+
+    <button
+        class="primary-btn"
+        onclick="saveJournal()"
+    >
+        💾 Save Trade
+    </button>
+
+
+    <div id="journalEntries"></div>
+
+</section>
+
+
+<!-- ==================================================
+     FOOTER
+     ================================================== -->
+
+<footer>
+
+    <strong>
+        🐯 Tiger Finance
+    </strong>
+
+    <p>
+        Forex • Crypto • Stocks • Finance
+    </p>
+
+    <p>
+        © 2026 Tiger Finance
+    </p>
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* ==================================================
+   TIGER FINANCE JAVASCRIPT
+   ================================================== */
+
+
+/* ==================================================
+   NAVIGATION
+   ================================================== */
+
+function scrollToSection(id) {
+
+    const section =
+        document.getElementById(id);
+
+    if (section) {
+
+        section.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+
+/* ==================================================
+   FOREX CALCULATOR
+   ================================================== */
+
+function calculateLotSize() {
+
+    const balance =
+        Number(
+            document.getElementById(
+                "balance"
+            ).value
+        );
+
+    const risk =
+        Number(
+            document.getElementById(
+                "risk"
+            ).value
+        );
+
+    const stopLoss =
+        Number(
+            document.getElementById(
+                "stopLoss"
+            ).value
+        );
+
+    const pair =
+        document.getElementById(
+            "currencyPair"
+        ).value;
+
+    const accountCurrency =
+        document.getElementById(
+            "accountCurrency"
+        ).value;
+
+    const result =
+        document.getElementById(
+            "lotResult"
+        );
+
+
+    if (
+        !Number.isFinite(balance) ||
+        balance <= 0
+    ) {
+
+        result.innerHTML =
+            "❌ Please enter a valid balance.";
+
+        return;
+
+    }
+
+
+    if (
+        !Number.isFinite(risk) ||
+        risk <= 0 ||
+        risk > 100
+    ) {
+
+        result.innerHTML =
+            "❌ Risk must be between 0.01% and 100%.";
+
+        return;
+
+    }
+
+
+    if (
+        !Number.isFinite(stopLoss) ||
+        stopLoss <= 0
+    ) {
+
+        result.innerHTML =
+            "❌ Please enter a valid stop-loss.";
+
+        return;
+
+    }
+
+
+    const riskAmount =
+        balance *
+        risk /
+        100;
+
+
+    /*
+       This calculator uses
+       approximate USD pip values.
+
+       A production-grade broker calculator
+       should obtain live prices and the
+       broker's contract specifications.
+    */
+
+    const pipValues = {
+
+        EURUSD: 10,
+        GBPUSD: 10,
+        AUDUSD: 10,
+        NZDUSD: 10,
+
+        USDJPY: 6.67,
+        USDCHF: 10.50,
+        USDCAD: 7.30
+
+    };
+
+
+    if (
+        accountCurrency !== "USD"
+    ) {
+
+        result.innerHTML =
+
+            "<strong>Risk:</strong> " +
+            risk.toFixed(2) +
+            "%<br>" +
+
+            "<strong>Risk Amount:</strong> " +
+            accountCurrency +
+            " " +
+            riskAmount.toFixed(2) +
+            "<br><br>" +
+
+            "<span class='warning'>" +
+            "⚠️ Exact lot sizing for " +
+            accountCurrency +
+            " requires a live exchange-rate " +
+            "conversion." +
+            "</span>";
+
+        return;
+
+    }
+
+
+    if (
+        !pipValues[pair]
+    ) {
+
+        result.innerHTML =
+
+            "<strong>Risk:</strong> " +
+            risk.toFixed(2) +
+            "%<br>" +
+
+            "<strong>Risk Amount:</strong> $" +
+            riskAmount.toFixed(2) +
+            "<br><br>" +
+
+            "<span class='warning'>" +
+            "⚠️ This pair requires live " +
+            "exchange-rate conversion for " +
+            "an exact pip value." +
+            "</span>";
+
+        return;
+
+    }
+
+
+    const pipValue =
+        pipValues[pair];
+
+
+    const lotSize =
+        riskAmount /
+        (
+            stopLoss *
+            pipValue
+        );
+
+
+    result.innerHTML =
+
+        "<strong>Pair:</strong> " +
+        pair +
+        "<br>" +
+
+        "<strong>Risk:</strong> " +
+        risk.toFixed(2) +
+        "%" +
+        "<br>" +
+
+        "<strong>Risk Amount:</strong> $" +
+        riskAmount.toFixed(2) +
+        "<br>" +
+
+        "<strong>Stop Loss:</strong> " +
+        stopLoss.toFixed(1) +
+        " pips" +
+        "<br>" +
+
+        "<strong>Estimated Lot Size:</strong> " +
+        lotSize.toFixed(2) +
+        "<br><br>" +
+
+        "<span class='small'>" +
+        "Estimate only. Actual broker pip values, " +
+        "contract specifications, conversion rates " +
+        "and trading costs can differ." +
+        "</span>";
+
+}
+
+
+/* ==================================================
+   TIME HELPER
+   ================================================== */
+
+function getMinutes(
+    timeZone
+) {
+
+    const parts =
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone: timeZone,
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false
+            }
+        ).formatToParts(
+            new Date()
+        );
+
+
+    const hour =
+        Number(
+            parts.find(
+                p =>
+                    p.type === "hour"
+            ).value
+        );
+
+
+    const minute =
+        Number(
+            parts.find(
+                p =>
+                    p.type === "minute"
+            ).value
+        );
+
+
+    return (
+        hour * 60 +
+        minute
+    );
+
+}
+
+
+/* ==================================================
+   SESSION CHECK
+   ================================================== */
+
+function sessionIsOpen(
+    timeZone,
+    openHour,
+    closeHour
+) {
+
+    const minutes =
+        getMinutes(
+            timeZone
+        );
+
+
+    return (
+        minutes >=
+        openHour * 60
+    ) &&
+    (
+        minutes <
+        closeHour * 60
+    );
+
+}
+
+
+/* ==================================================
+   MARKET DASHBOARD
+   ================================================== */
+
+function updateMarketDashboard() {
+
+    const active = [];
+
+
+    if (
+        sessionIsOpen(
+            "Australia/Sydney",
+            7,
+            16
+        )
+    ) {
+
+        active.push(
+            "Sydney"
+        );
+
+    }
+
+
+    if (
+        sessionIsOpen(
+            "Asia/Tokyo",
+            9,
+            18
+        )
+    ) {
+
+        active.push(
+            "Tokyo"
+        );
+
+    }
+
+
+    if (
+        sessionIsOpen(
+            "Europe/London",
+            8,
+            17
+        )
+    ) {
+
+        active.push(
+            "London"
+        );
+
+    }
+
+
+    if (
+        sessionIsOpen(
+            "America/New_York",
+            8,
+            17
+        )
+    ) {
+
+        active.push(
+            "New York"
+        );
+
+    }
+
+
+    const forexStatus =
+        document.getElementById(
+            "forexStatus"
+        );
+
+
+    if (
+        active.length
+    ) {
+
+        forexStatus.innerHTML =
+            "<span class='open'>" +
+            "🟢 " +
+            active.join(" + ") +
+            " currently open." +
+            "</span>";
+
+    }
+
+    else {
+
+        forexStatus.innerHTML =
+            "<span class='closed'>" +
+            "🔴 No major forex session currently open." +
+            "</span>";
+
+    }
+
+
+    const overlap =
+        document.getElementById(
+            "forexOverlap"
+        );
+
+
+    if (
+        active.includes("London") &&
+        active.includes("New York")
+    ) {
+
+        overlap.textContent =
+            "🔥 London + New York overlap is ACTIVE.";
+
+    }
+
+    else if (
+        active.includes("Sydney") &&
+        active.includes("Tokyo")
+    ) {
+
+        overlap.textContent =
+            "🔥 Sydney + Tokyo overlap is ACTIVE.";
+
+    }
+
+    else {
+
+        overlap.textContent =
+            "No major forex overlap currently.";
+
+    }
+
+
+    document.getElementById(
+        "nigeriaTime"
+    ).textContent =
+
+        new Intl.DateTimeFormat(
+            "en-NG",
+            {
+                timeZone:
+                    "Africa/Lagos",
+
+                hour:
+                    "2-digit",
+
+                minute:
+                    "2-digit",
+
+                second:
+                    "2-digit",
+
+                hour12:
+                    false
+            }
+        ).format(
+            new Date()
+        );
+
+
+    updateStockMarkets();
+
+}
+
+
+/* ==================================================
+   STOCK MARKETS
+   ================================================== */
+
+function updateStockMarkets() {
+
+    const now =
+        new Date();
+
+
+    /* ---------- US ---------- */
+
+    const us =
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:
+                    "America/New_York",
+
+                weekday:
+                    "short",
+
+                hour:
+                    "2-digit",
+
+                minute:
+                    "2-digit",
+
+                hour12:
+                    false
+            }
+        ).formatToParts(
+            now
+        );
+
+
+    const usDay =
+        us.find(
+            p =>
+                p.type === "weekday"
+        ).value;
+
+
+    const usHour =
+        Number(
+            us.find(
+                p =>
+                    p.type === "hour"
+            ).value
+        );
+
+
+    const usMinute =
+        Number(
+            us.find(
+                p =>
+                    p.type === "minute"
+            ).value
+        );
+
+
+    const usMinutes =
+        usHour * 60 +
+        usMinute;
+
+
+    const usOpen =
+
+        usDay !== "Sat" &&
+        usDay !== "Sun" &&
+        usMinutes >= 570 &&
+        usMinutes < 960;
+
+
+    document.getElementById(
+        "usStockStatus"
+    ).innerHTML =
+
+        usOpen
+
+        ? "<span class='open'>🟢 OPEN</span>"
+
+        : "<span class='closed'>🔴 CLOSED</span>";
+
+
+    /* ---------- NIGERIA ---------- */
+
+    const ng =
+        new Intl.DateTimeFormat(
+            "en-NG",
+            {
+                timeZone:
+                    "Africa/Lagos",
+
+                weekday:
+                    "short",
+
+                hour:
+                    "2-digit",
+
+                minute:
+                    "2-digit",
+
+                hour12:
+                    false
+            }
+        ).formatToParts(
+            now
+        );
+
+
+    const ngDay =
+        ng.find(
+            p =>
+                p.type === "weekday"
+        ).value;
+
+
+    const ngHour =
+        Number(
+            ng.find(
+                p =>
+                    p.type === "hour"
+            ).value
+        );
+
+
+    const ngMinute =
+        Number(
+            ng.find(
+                p =>
+                    p.type === "minute"
+            ).value
+        );
+
+
+    const ngMinutes =
+        ngHour * 60 +
+        ngMinute;
+
+
+    const ngOpen =
+
+        ngDay !== "Sat" &&
+        ngDay !== "Sun" &&
+        ngMinutes >= 540 &&
+        ngMinutes < 960;
+
+
+    document.getElementById(
+        "ngStockStatus"
+    ).innerHTML =
+
+        ngOpen
+
+        ? "<span class='open'>🟢 OPEN</span>"
+
+        : "<span class='closed'>🔴 CLOSED</span>";
+
+}
+
+
+/* ==================================================
+   CRYPTO
+   ================================================== */
+
+async function loadCryptoPrices() {
+
+    const bitcoin =
+        document.getElementById(
+            "bitcoinPrice"
+        );
+
+    const ethereum =
+        document.getElementById(
+            "ethereumPrice"
+        );
+
+    const status =
+        document.getElementById(
+            "cryptoStatus"
+        );
+
+
+    try {
+
+        status.textContent =
+            "Loading live prices...";
+
+
+        const response =
+            await fetch(
+                "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd",
+                {
+                    cache:
+                        "no-store"
+                }
+            );
+
+
+        if (
+            !response.ok
+        ) {
+
+            throw new Error(
+                "Crypto API unavailable"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !data.bitcoin ||
+            !data.ethereum
+        ) {
+
+            throw new Error(
+                "Invalid crypto response"
+            );
+
+        }
+
+
+        bitcoin.textContent =
+            "$" +
+            Number(
+                data.bitcoin.usd
+            ).toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits:
+                        2,
+
+                    maximumFractionDigits:
+                        2
+                }
+            );
+
+
+        ethereum.textContent =
+            "$" +
+            Number(
+                data.ethereum.usd
+            ).toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits:
+                        2,
+
+                    maximumFractionDigits:
+                        2
+                }
+            );
+
+
+        status.textContent =
+            "Last updated: " +
+            new Date().toLocaleTimeString();
+
+
+    }
+
+    catch (error) {
+
+        console.log(
+            "Crypto error:",
+            error
+        );
+
+
+        bitcoin.textContent =
+            "Unavailable";
+
+        ethereum.textContent =
+            "Unavailable";
+
+
+        status.textContent =
+            "Live crypto prices are temporarily unavailable.";
+
+    }
+
+}
+
+
+/* ==================================================
+   WATCHLIST
+   ================================================== */
+
+function getWatchlist() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                "tigerWatchlist"
+            ) || "[]"
+        );
+
+    }
+
+    catch {
+
+        return [];
+
+    }
+
+}
+
+
+function displayWatchlist() {
+
+    const container =
+        document.getElementById(
+            "watchlist"
+        );
+
+
+    const list =
+        getWatchlist();
+
+
+    container.innerHTML =
+        "";
+
+
+    if (
+        list.length === 0
+    ) {
+
+        container.innerHTML =
+            "<p class='small'>" +
+            "No pairs saved yet." +
+            "</p>";
+
+        return;
+
+    }
+
+
+    list.forEach(
+        pair => {
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+
+            row.className =
+                "watch-item";
+
+
+            const name =
+                document.createElement(
+                    "strong"
+                );
+
+
+            name.textContent =
+                "⭐ " + pair;
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "remove-btn";
+
+
+            button.textContent =
+                "Remove";
+
+
+            button.onclick =
+                function() {
+
+                    removeWatchPair(
+                        pair
+                    );
+
+                };
+
+
+            row.appendChild(
+                name
+            );
+
+            row.appendChild(
+                button
+            );
+
+            container.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
+
+function addWatchPair() {
+
+    const pair =
+        document.getElementById(
+            "watchPair"
+        ).value;
+
+
+    const list =
+        getWatchlist();
+
+
+    if (
+        !list.includes(pair)
+    ) {
+
+        list.push(
+            pair
+        );
+
+        localStorage.setItem(
+            "tigerWatchlist",
+            JSON.stringify(list)
+        );
+
+    }
+
+
+    displayWatchlist();
+
+}
+
+
+function removeWatchPair(
+    pair
+) {
+
+    const list =
+        getWatchlist().filter(
+            item =>
+                item !== pair
+        );
+
+
+    localStorage.setItem(
+        "tigerWatchlist",
+        JSON.stringify(list)
+    );
+
+
+    displayWatchlist();
+
+}
+
+
+/* ==================================================
+   NEWS
+   ================================================== */
+
+function loadNews() {
+
+    const container =
+        document.getElementById(
+            "newsContainer"
+        );
+
+
+    container.innerHTML = `
+
+        <div class="news-item">
+
+            <strong>
+                🇺🇸 USD — Major Economic Events
+            </strong>
+
+            <p>
+                Watch inflation, employment,
+                GDP and Federal Reserve events.
+            </p>
+
+        </div>
+
+
+        <div class="news-item">
+
+            <strong>
+                🇪🇺 EUR — Major Economic Events
+            </strong>
+
+            <p>
+                Watch Euro-area inflation,
+                GDP and European Central Bank events.
+            </p>
+
+        </div>
+
+
+        <div class="news-item">
+
+            <strong>
+                🇬🇧 GBP — Major Economic Events
+            </strong>
+
+            <p>
+                Watch UK inflation, employment
+                and Bank of England events.
+            </p>
+
+        </div>
+
+
+        <div class="news-item">
+
+            <strong>
+                ⚠️ Trading Reminder
+            </strong>
+
+            <p>
+                High-impact economic announcements
+                can cause rapid price movements.
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ==================================================
+   JOURNAL
+   ================================================== */
+
+function getJournal() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                "tigerJournal"
+            ) || "[]"
+        );
+
+    }
+
+    catch {
+
+        return [];
+
+    }
+
+}
+
+
+function displayJournal() {
+
+    const container =
+        document.getElementById(
+            "journalEntries"
+        );
+
+
+    const entries =
+        getJournal();
+
+
+    container.innerHTML =
+        "";
+
+
+    if (
+        entries.length === 0
+    ) {
+
+        container.innerHTML =
+            "<p class='small'>" +
+            "No trades saved yet." +
+            "</p>";
+
+        return;
+
+    }
+
+
+    entries.forEach(
+        trade => {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "journal-entry";
+
+
+            const title =
+                document.createElement(
+                    "strong"
+                );
+
+
+            title.textContent =
+                trade.pair;
+
+
+            item.appendChild(
+                title
+            );
+
+
+            item.appendChild(
+                document.createElement(
+                    "br"
+                )
+            );
+
+
+            item.append(
+                "Direction: " +
+                trade.direction
+            );
+
+
+            item.appendChild(
+                document.createElement(
+                    "br"
+                )
+            );
+
+
+            item.append(
+                "Entry: " +
+                (
+                    trade.entry ||
+                    "Not entered"
+                )
+            );
+
+
+            item.appendChild(
+                document.createElement(
+                    "br"
+                )
+            );
+
+
+            item.append(
+                "Result: " +
+                trade.result
+            );
+
+
+            item.appendChild(
+                document.createElement(
+                    "br"
+                )
+            );
+
+
+            item.append(
+                "Date: " +
+                trade.date
+            );
+
+
+            if (
+                trade.notes
+            ) {
+
+                item.appendChild(
+                    document.createElement(
+                        "br"
+                    )
+                );
+
+
+                item.append(
+                    "Notes: " +
+                    trade.notes
+                );
+
+            }
+
+
+            item.appendChild(
+                document.createElement(
+                    "br"
+                )
+            );
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "delete-btn";
+
+
+            button.textContent =
+                "Delete";
+
+
+            button.onclick =
+                function() {
+
+                    deleteJournal(
+                        trade.id
+                    );
+
+                };
+
+
+            item.appendChild(
+                button
+            );
+
+
+            container.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+function saveJournal() {
+
+    const pair =
+        document.getElementById(
+            "journalPair"
+        ).value.trim();
+
+
+    const direction =
+        document.getElementById(
+            "journalDirection"
+        ).value;
+
+
+    const entry =
+        document.getElementById(
+            "journalEntry"
+        ).value;
+
+
+    const result =
+        document.getElementById(
+            "journalResult"
+        ).value;
+
+
+    const notes =
+        document.getElementById(
+            "journalNotes"
+        ).value.trim();
+
+
+    if (
+        pair === ""
+    ) {
+
+        alert(
+            "Please enter a currency pair."
+        );
+
+        return;
+
+    }
+
+
+    const entries =
+        getJournal();
+
+
+    entries.unshift({
+
+        id:
+            Date.now(),
+
+        date:
+            new Date().toLocaleString(),
+
+        pair:
+            pair,
+
+        direction:
+            direction,
+
+        entry:
+            entry,
+
+        result:
+            result,
+
+        notes:
+            notes
+
+    });
+
+
+    localStorage.setItem(
+        "tigerJournal",
+        JSON.stringify(entries)
+    );
+
+
+    document.getElementById(
+        "journalPair"
+    ).value = "";
+
+
+    document.getElementById(
+        "journalEntry"
+    ).value = "";
+
+
+    document.getElementById(
+        "journalNotes"
+    ).value = "";
+
+
+    displayJournal();
+
+}
+
+
+function deleteJournal(
+    id
+) {
+
+    const entries =
+        getJournal().filter(
+            trade =>
+                trade.id !== id
+        );
+
+
+    localStorage.setItem(
+        "tigerJournal",
+        JSON.stringify(entries)
+    );
+
+
+    displayJournal();
+
+}
+
+
+/* ==================================================
+   START TIGER FINANCE
+   ================================================== */
+
+updateMarketDashboard();
+
+loadCryptoPrices();
+
+displayWatchlist();
+
+displayJournal();
+
+loadNews();
+
+
+/* ==================================================
+   AUTOMATIC UPDATES
+   ================================================== */
+
+setInterval(
+    updateMarketDashboard,
+    1000
+);
+
+
+setInterval(
+    loadCryptoPrices,
+    60000
+);
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://obrptgadzcpfaljaoref.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_2mYezuBysVNcnBo3eYMcZA_wPfs8XnJ";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+
+console.log("Tiger Finance connected to Supabase");
+</script>
+<script>
+document
+    .getElementById("signupButton")
+    .addEventListener("click", async function () {
+
+        const name =
+            document.getElementById("signupName").value.trim();
+
+        const email =
+            document.getElementById("signupEmail").value.trim();
+
+        const password =
+            document.getElementById("signupPassword").value;
+
+        const message =
+            document.getElementById("signupMessage");
+
+        if (!name || !email || !password) {
+            message.textContent =
+                "Please fill in all fields.";
+            return;
+        }
+
+        if (password.length < 6) {
+            message.textContent =
+                "Password must be at least 6 characters.";
+            return;
+        }
+
+        message.textContent =
+            "Creating your account...";
+
+        const { data, error } =
+            await supabaseClient.auth.signUp({
+                email: email,
+                password: password,
+                options: {
+                    data: {
+                        full_name: name
+                    }
+                }
+            });
+
+        if (error) {
+            console.error(error);
+            message.textContent =
+                error.message;
+            return;
+        }
+
+        if (data.user && !data.session) {
+            message.textContent =
+                "Account created! Please check your email to confirm your account.";
+        } else {
+            message.textContent =
+                "Account created successfully!";
+        }
+
+    });
+</script>
+<script>
+document
+    .getElementById("loginButton")
+    .addEventListener("click", async function () {
+
+        const email =
+            document.getElementById("loginEmail").value.trim();
+
+        const password =
+            document.getElementById("loginPassword").value;
+
+        const message =
+            document.getElementById("loginMessage");
+
+        if (!email || !password) {
+            message.textContent =
+                "Please enter your email and password.";
+            return;
+        }
+
+        message.textContent =
+            "Logging in...";
+
+        const { data, error } =
+            await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+        if (error) {
+            console.error(error);
+            message.textContent = error.message;
+            return;
+        }
+
+        message.textContent =
+            "Login successful! Welcome to Tiger Finance.";
+
+        console.log("Tiger Finance user logged in:", data.user);
+    });
+</script>
+
+</body>
+
+</html>
